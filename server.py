@@ -74,7 +74,7 @@ if __name__ == "__main__":
     print(f"[+] Server ascultă pe {SERVER_IP}:{SERVER_PORT}")
 
     while nr_cereri<4: #primim un nr de pachete p
-        data, client_addr = sock.recvfrom(4096)
+        data, client_addr = sock.recvfrom(65535)
         print(f"[>] Pachet primit de la {client_addr}")
         nr_cereri+=1
         header, payload = parse_packet(data)
